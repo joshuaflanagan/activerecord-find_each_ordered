@@ -37,6 +37,10 @@ Item.
 end
 ```
 
+## Alternatives
+
+There are other gems that try to solve this same problem. They all end up with very similar implementations (mostly because we all start from the source for `#find_each`). After I started my implementation, but before publishing it, I discovered https://github.com/nambrot/ar-find-in-batches-with-order. If has a little bit more flexibility - the ability to infer the desired sort order based on `order` declarations on the Relation, support for descending sorts, support for yielding the entire batch or just a record at a time. If those features are interesting to you, you are probably better off using that gem. I stuck with my implementation because I didn't need the complexity of those other features, and I built tests to prove the features I did need.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
